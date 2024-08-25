@@ -1,19 +1,15 @@
 package com.example.courses.models;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 public class CourseInstance {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private String id;
     private int year;
     private int semester;
-
-    @ManyToOne
-    @JoinColumn(name = "course_id")
-    private Course course;
+    private String courseId; // Reference to the Course ID
 
     // Getters, Setters, Constructors
 }

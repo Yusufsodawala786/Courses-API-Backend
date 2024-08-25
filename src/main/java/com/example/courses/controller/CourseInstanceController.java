@@ -25,8 +25,7 @@ public class CourseInstanceController {
     }
 
     @DeleteMapping("/{year}/{semester}/{id}")
-    public void deleteInstance(@PathVariable int year, @PathVariable int semester, @PathVariable Long id) {
+    public void deleteInstance(@PathVariable int year, @PathVariable int semester, @PathVariable String id) {
         courseInstanceRepository.deleteById(id);
     }
 }
-

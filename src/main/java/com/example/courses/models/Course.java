@@ -1,19 +1,16 @@
 package com.example.courses.models;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
-@Entity
+@Document(collection = "courses")
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private String id;
     private String title;
     private String courseCode;
     private String description;
-
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<CourseInstance> instances;
 
     // Getters, Setters, Constructors

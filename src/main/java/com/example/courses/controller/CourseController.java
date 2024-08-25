@@ -25,12 +25,12 @@ public class CourseController {
     }
 
     @GetMapping("/{id}")
-    public Course getCourse(@PathVariable Long id) {
+    public Course getCourse(@PathVariable String id) {
         return courseRepository.findById(id).orElseThrow(() -> new RuntimeException("Course not found"));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCourse(@PathVariable Long id) {
+    public void deleteCourse(@PathVariable String id) {
         courseRepository.deleteById(id);
     }
 }
